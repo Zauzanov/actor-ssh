@@ -5,7 +5,7 @@ import sys
 import threading
 
 CWD = os.path.dirname(os.path.realpath(__file__))
-HOSTKEY = paramiko.RSAKey(filename=os.path.join(CWD, 'test_rsa.key'))                       # demo file by paramiko: https://github.com/paramiko/paramiko/blob/main/demos/test_rsa.key
+HOSTKEY = paramiko.RSAKey(filename=os.path.join(CWD, 'test_rsa.key'))                       # demo file by paramiko: https://github.com/paramiko/paramiko/blob/main/demos/test_rsa.key - download to the folder with the ssh_server.py
 
 class Server(paramiko.ServerInterface):
     def __init__(self):
@@ -13,10 +13,10 @@ class Server(paramiko.ServerInterface):
     
     def check_channel_request(self, kind, chanid):
         if kind == 'session':
-            return paramiko.OPEN_SUCCEDED
+            return paramiko.OPEN_SUCCEEDED
         return paramiko.OPEN_FAILED_ADMINISTRATIVELY_PROHIBITED
     def check_auth_password(self, username, password):
-        if (username == 'zero') and (password == 'cool'):
+        if (username == 'zero') and (password == 'cool'):                                   # replace with client's Windows username
             return paramiko.AUTH_SUCCESSFUL
 
 if __name__ == '__main__':

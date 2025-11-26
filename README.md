@@ -1,21 +1,36 @@
 <p align="center">
-  <h1 align="center"> actor ssh </h1>
+  <h1 align="center"> actor ssh - SSH-client/server - Windows version</h1>
 	<p align="center">an SSH-client based on Paramiko for secure connections using SSH2 protocol</p>
 </p>
 
-## 1. Connect to a server(Metasploitable2 machine in my case):
+## Download a demo file by Paramiko: https://github.com/paramiko/paramiko/blob/main/demos/test_rsa.key - download to the folder with the ssh_server.py on your Kali machine.
+
+## 1. Run the SSH-server on your Kali machine:
 ```bash
-python ssh_cmd.py
+python ssh_server.py
+[+] Listening for connection ...
 ```
+
+## 2. Run the SSH-client:
+
 ```bash
-Username: msfadmin
+python ssh_rcmd.py 
 Password: 
-Enter server IP: 192.168.204.129
-Enter port or <CR>: 22
-Enter command or <CR>: ls
---- Output ---
-imp.py
-revs.py
-tcp.py
-vulnerable
+Enter server IP: 192.168.204.139
+Enter port: 2222
+Welcome to bh_ssh
 ```
+
+## 3. Execute commands:
+```bash
+[+] Got a connection! <socket.socket fd=4, family=2, type=1, proto=0, laddr=('192.168.204.139', 2222), raddr=('192.168.204.1', 53813)> ('192.168.204.1', 53813)
+[+] Authenticated!
+b'ClientConnected'
+Enter command: ls
+README.md
+ssh_rcmd.py
+ssh_server.py
+test_rsa.key
+```
+
+So we command via our SSH-server, the SSH-client on Windows machine executes our commands and sends the output to the server. That's it. 

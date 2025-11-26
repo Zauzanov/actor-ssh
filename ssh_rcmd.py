@@ -1,5 +1,4 @@
 import paramiko
-import shlex 
 import subprocess
 
 def ssh_command(ip, port, user, passwd, command):
@@ -15,7 +14,7 @@ def ssh_command(ip, port, user, passwd, command):
     try: 
         while True:
             command = ssh_session.recv(1024)
-            cmd = command.decode
+            cmd = command.decode()
 
             if cmd == 'exit':
                 break

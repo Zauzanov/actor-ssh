@@ -3,15 +3,15 @@
 	<p align="center">an SSH-client based on Paramiko for secure connections using SSH2 protocol</p>
 </p>
 
-## Download a demo file by Paramiko: https://github.com/paramiko/paramiko/blob/main/demos/test_rsa.key - download to the folder with the ssh_server.py on your Kali machine.
+## 1. Download a demo file by Paramiko: https://github.com/paramiko/paramiko/blob/main/demos/test_rsa.key - download to the folder with the ssh_server.py on your Kali machine.
 
-## 1. Run the SSH-server on your Kali machine:
+## 2. Run the SSH-server on your Kali machine:
 ```bash
 python ssh_server.py
 [+] Listening for connection ...
 ```
 
-## 2. Run the SSH-client:
+## 3. Run the SSH-client:
 
 ```bash
 python ssh_rcmd.py 
@@ -21,7 +21,7 @@ Enter port: 2222
 Welcome to bh_ssh
 ```
 
-## 3. Execute commands:
+## 4. Execute commands:
 ```bash
 [+] Got a connection! <socket.socket fd=4, family=2, type=1, proto=0, laddr=('192.168.204.139', 2222), raddr=('192.168.204.1', 53813)> ('192.168.204.1', 53813)
 [+] Authenticated!

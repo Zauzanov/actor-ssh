@@ -3,7 +3,7 @@ import paramiko                                                         # a lib 
 # establishing SSH connection and command execution
 def ssh_command(ip, port, user, passwd, cmd):                       
     client = paramiko.SSHClient()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())        # ATTENTION! Accepts the server's host key w/o verification. Unsafe for production! 
+    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())        # ATTENTION! Accepts the server's host key w/o verification. Unsafe for production - strong MITM risk! 
     client.connect(ip, port=port, username=user, password=passwd)
 
     _, stdout, stderr = client.exec_command(cmd)

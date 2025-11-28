@@ -5,7 +5,7 @@
 
 ## 1. Download a demo file by Paramiko: https://github.com/paramiko/paramiko/blob/main/demos/test_rsa.key - download to the folder with the ssh_server.py on your Kali machine.
 
-## 2. Run the SSH-server on your Kali machine:
+## 2. Download 'ssh_server.py' and edit the IP-Address and Port to bind to your own host — to make the server listen your host only. Then run the SSH-server on your Kali machine:
 ```bash
 python ssh_server.py
 [+] Listening for connection ...

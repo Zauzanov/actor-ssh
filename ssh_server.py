@@ -47,7 +47,7 @@ if __name__ == '__main__':
     
     print('[+] Authenticated!')
     print(chan.recv(1024))
-    chan.send('Welcome to bh_ssh')
+    chan.send('Welcome to actor_ssh')
     try:
         while True:
             command = input("Enter command: ")

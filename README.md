@@ -3,7 +3,7 @@
 	<p align="center">an SSH-client based on Paramiko for secure connections using SSH2 protocol</p>
 </p>
 
-This script is a small Paramiko SSH server. It:
+This script is a small Paramiko SSH client and server. It:
 - loads a host key;
 - accepts one TCP connection;
 - performs SSH handshake and password check;

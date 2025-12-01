@@ -3,6 +3,15 @@
 	<p align="center">an SSH-client based on Paramiko for secure connections using SSH2 protocol</p>
 </p>
 
+This script is a small Paramiko SSH server. It:
+- loads a host key;
+- accepts one TCP connection;
+- performs SSH handshake and password check;
+- opens a session channel;
+- sends/receives simple text commands interactively.
+
+It's great for pentesting, but unsafe for production!!! because of these factors: hard-coded credentials, demo host key, lack of logging and authentication policies, single-client handling and so on. Feel free to use it on servers/hosts you own or have permission to test. 
+
 ## 1. Download a demo file by Paramiko: https://github.com/paramiko/paramiko/blob/main/demos/test_rsa.key - download to the folder with the ssh_server.py on your Kali machine.
 
 ## 2. Download 'ssh_server.py' and edit the IP-Address and Port to bind to your own host — to make the server listen your host only. Then run the SSH-server on your Kali machine:
